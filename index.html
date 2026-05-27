@@ -1,9 +1,10 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ever Latch Permanent Jewelry</title>
+  <meta name="description" content="Ever Latch Permanent Jewelry in Santa Barbara. Custom-fit bracelets, anklets, charms, and private events.">
   <style>
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -16,8 +17,8 @@
     header {
       position: sticky;
       top: 0;
-      z-index: 10;
-      background: rgba(247, 241, 236, 0.92);
+      z-index: 100;
+      background: rgba(247, 241, 236, 0.94);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid rgba(21, 19, 8, 0.1);
     }
@@ -26,8 +27,8 @@
       margin: 0 auto;
       padding: 18px 20px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       gap: 20px;
     }
     .brand {
@@ -38,48 +39,47 @@
     }
     nav { display: flex; gap: 28px; }
     nav a {
-      color: #151308;
       text-decoration: none;
+      color: #151308;
       font-size: 13px;
       letter-spacing: .18em;
       text-transform: uppercase;
     }
     .button {
-      display: inline-block;
-      border-radius: 999px;
-      padding: 14px 24px;
       background: #151308;
       color: #f7f1ec;
       text-decoration: none;
+      padding: 14px 24px;
+      border-radius: 999px;
+      display: inline-block;
       border: 1px solid #151308;
       font-size: 14px;
-      cursor: pointer;
+    }
+    .button.outline {
+      background: transparent;
+      color: #151308;
+      border-color: rgba(21, 19, 8, 0.25);
     }
     .button.light {
       background: #f7f1ec;
       color: #151308;
       border-color: #f7f1ec;
     }
-    .button.outline {
-      background: transparent;
-      color: #151308;
-      border-color: rgba(21, 19, 8, 0.28);
-    }
     .hero {
       max-width: 1120px;
       margin: 0 auto;
-      padding: 90px 20px 70px;
+      padding: 92px 20px 74px;
       display: grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: 56px;
+      grid-template-columns: 1fr 1fr;
+      gap: 54px;
       align-items: center;
     }
     .eyebrow {
       text-transform: uppercase;
       letter-spacing: .28em;
-      color: rgba(21, 19, 8, 0.68);
-      font-size: 13px;
-      margin-bottom: 22px;
+      font-size: 12px;
+      color: rgba(21, 19, 8, .62);
+      margin-bottom: 20px;
     }
     h1, h2, h3 {
       font-family: Georgia, serif;
@@ -87,34 +87,44 @@
       margin: 0;
     }
     h1 {
-      font-size: clamp(52px, 7vw, 86px);
-      line-height: 1.03;
-      letter-spacing: .03em;
+      font-size: clamp(52px, 7vw, 82px);
+      line-height: 1.04;
+      letter-spacing: .02em;
     }
-    h2 { font-size: clamp(38px, 5vw, 58px); }
+    h2 {
+      font-size: clamp(38px, 5vw, 54px);
+      line-height: 1.08;
+    }
     h3 { font-size: 28px; }
     p {
       line-height: 1.8;
       color: rgba(21, 19, 8, .72);
     }
-    .hero p { font-size: 18px; max-width: 560px; }
-    .actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 30px; }
-
-    .carousel-card {
-      border: 1px solid rgba(21, 19, 8, 0.1);
-      background: rgba(255, 255, 255, 0.45);
+    .hero-copy {
+      font-size: 18px;
+      max-width: 560px;
+    }
+    .actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 30px;
+    }
+    .carousel {
+      background: rgba(255, 255, 255, .54);
       border-radius: 34px;
       padding: 12px;
-      box-shadow: 0 14px 50px rgba(21,19,8,.05);
+      border: 1px solid rgba(21, 19, 8, .1);
+      box-shadow: 0 16px 50px rgba(21, 19, 8, .06);
     }
-    .photo-wrap {
+    .image-wrap {
       position: relative;
-      aspect-ratio: 4/5;
+      aspect-ratio: 4 / 5;
       overflow: hidden;
       border-radius: 26px;
       background: #fbf8f5;
     }
-    .photo-wrap img {
+    .image-wrap img {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -126,23 +136,27 @@
       right: 0;
       bottom: 0;
       padding: 26px;
-      background: linear-gradient(to top, rgba(21,19,8,.72), transparent);
+      background: linear-gradient(to top, rgba(21, 19, 8, .72), transparent);
       color: #f7f1ec;
     }
     .caption h3 { font-size: 28px; }
-    .caption p { color: rgba(247,241,236,.82); margin: 4px 0 0; font-size: 14px; }
+    .caption p {
+      margin: 4px 0 0;
+      color: rgba(247, 241, 236, .82);
+      font-size: 14px;
+    }
     .controls {
-      margin-top: 16px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      margin-top: 16px;
       padding: 0 4px;
     }
     .arrow {
-      border: 1px solid rgba(21, 19, 8, 0.15);
       background: transparent;
-      border-radius: 999px;
+      border: 1px solid rgba(21, 19, 8, .16);
       padding: 10px 16px;
+      border-radius: 999px;
       cursor: pointer;
     }
     .dots { display: flex; gap: 8px; }
@@ -150,96 +164,80 @@
       width: 10px;
       height: 10px;
       border-radius: 999px;
+      background: rgba(21, 19, 8, .24);
       border: 0;
-      background: rgba(21,19,8,.25);
       cursor: pointer;
     }
     .dot.active { background: #151308; }
-
-    section { padding: 70px 20px; }
-    .container { max-width: 1120px; margin: 0 auto; }
-    .section-head {
+    section { padding: 72px 20px; }
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+    .section-top {
       display: flex;
       justify-content: space-between;
-      gap: 25px;
       align-items: end;
-      margin-bottom: 35px;
+      gap: 24px;
+      margin-bottom: 34px;
     }
-    .section-head p { max-width: 430px; }
+    .section-top p { max-width: 430px; }
     .grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 16px;
     }
     .card {
-      border: 1px solid rgba(21, 19, 8, 0.1);
-      background: rgba(255, 255, 255, 0.45);
+      background: rgba(255, 255, 255, .54);
+      padding: 28px;
       border-radius: 28px;
-      padding: 26px;
+      border: 1px solid rgba(21, 19, 8, .1);
     }
-    .experience {
-      display: grid;
-      grid-template-columns: 2fr 1fr;
-      gap: 18px;
-    }
-    .dark {
+    .dark-band {
       background: #151308;
       color: #f7f1ec;
       border-radius: 34px;
-      padding: 38px;
-    }
-    .dark p { color: rgba(247, 241, 236, .75); }
-    .event-box {
-      border: 1px solid rgba(21, 19, 8, 0.1);
-      background: rgba(255, 255, 255, 0.45);
-      border-radius: 34px;
-      padding: 48px;
+      padding: 46px;
       display: grid;
-      grid-template-columns: .85fr 1.15fr;
-      gap: 40px;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 34px;
       align-items: center;
     }
-    .about {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 35px;
-      align-items: center;
-    }
+    .dark-band p { color: rgba(247, 241, 236, .76); }
     .book {
-      max-width: 840px;
-      margin: 0 auto;
-      text-align: center;
       background: #151308;
       color: #f7f1ec;
       border-radius: 34px;
-      padding: 55px 30px;
+      padding: 58px 30px;
+      text-align: center;
+      max-width: 860px;
+      margin: auto;
     }
-    .book p { color: rgba(247, 241, 236, .75); margin-left: auto; margin-right: auto; max-width: 620px; }
+    .book p {
+      color: rgba(247, 241, 236, .76);
+      max-width: 620px;
+      margin-left: auto;
+      margin-right: auto;
+    }
     footer {
-      border-top: 1px solid rgba(21, 19, 8, 0.1);
-      padding: 25px 20px;
-      color: rgba(21, 19, 8, .60);
+      padding: 30px 20px;
+      border-top: 1px solid rgba(21, 19, 8, .1);
+      text-align: center;
+      color: rgba(21, 19, 8, .62);
     }
-    .footer-inner {
-      max-width: 1120px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
     @media (max-width: 850px) {
       nav { display: none; }
-      .brand { font-size: 20px; letter-spacing: .18em; }
-      .hero, .experience, .event-box, .about { grid-template-columns: 1fr; }
-      .grid { grid-template-columns: 1fr; }
-      .section-head { display: block; }
       .nav .button { display: none; }
-      section { padding: 50px 20px; }
+      .brand { font-size: 20px; letter-spacing: .18em; }
+      .hero, .dark-band { grid-template-columns: 1fr; }
+      .grid { grid-template-columns: 1fr; }
+      .section-top { display: block; }
+      section { padding: 54px 20px; }
+      .hero { padding-top: 58px; gap: 36px; }
     }
   </style>
 </head>
+
 <body>
   <header>
     <div class="nav">
@@ -250,24 +248,24 @@
         <a href="#about">About</a>
         <a href="#book">Book</a>
       </nav>
-      <a class="button" href="#book">Book Now</a>
+      <a class="button" href="https://book.squareup.com/appointments/vas2z8w1ss5yg8/location/LW295DB8795T6/services?buttonTextColor=ffffff&color=274b3a&locale=en&referrer=so&service_id=DXHAM6MCRI23MZCAGVRUA2XA" target="_blank" rel="noopener">Book Now</a>
     </div>
   </header>
 
   <main>
-    <div class="hero">
+    <section class="hero">
       <div>
-        <div class="eyebrow">✦ Permanent Jewelry in Santa Barbara</div>
+        <div class="eyebrow">Permanent Jewelry • Santa Barbara</div>
         <h1>Timeless, seamless, yours.</h1>
-        <p>Custom-fit permanent bracelets, anklets, necklaces, and charms welded with intention for everyday wear, special moments, and private events.</p>
+        <p class="hero-copy">Custom-fit bracelets, anklets, necklaces, and charms welded with intention for everyday wear, special moments, and private events.</p>
         <div class="actions">
-          <a class="button" href="#book">Book Your Appointment</a>
+          <a class="button" href="https://book.squareup.com/appointments/vas2z8w1ss5yg8/location/LW295DB8795T6/services?buttonTextColor=ffffff&color=274b3a&locale=en&referrer=so&service_id=DXHAM6MCRI23MZCAGVRUA2XA" target="_blank" rel="noopener">Book Your Appointment</a>
           <a class="button outline" href="#events">View Pop-Up Options</a>
         </div>
       </div>
 
-      <div class="carousel-card">
-        <div class="photo-wrap">
+      <div class="carousel">
+        <div class="image-wrap">
           <img id="carousel-image" src="" alt="">
           <div class="caption">
             <h3 id="carousel-title"></h3>
@@ -280,11 +278,11 @@
           <button class="arrow" id="next" aria-label="Next photo">→</button>
         </div>
       </div>
-    </div>
+    </section>
 
     <section id="services">
       <div class="container">
-        <div class="section-head">
+        <div class="section-top">
           <div>
             <div class="eyebrow">Services</div>
             <h2>Choose your piece</h2>
@@ -293,49 +291,36 @@
         </div>
 
         <div class="grid">
-          <div class="card"><h3>Bracelets</h3><p>Classic permanent jewelry, custom-fit and welded seamlessly.</p></div>
-          <div class="card"><h3>Anklets</h3><p>A timeless add-on for vacations, summer days, and everyday wear.</p></div>
-          <div class="card"><h3>Necklaces</h3><p>Delicate chains layered your way with a clean, effortless finish.</p></div>
-          <div class="card"><h3>Charms + Connectors</h3><p>Personalize your piece with a charm, birthstone, or statement connector.</p></div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container experience">
-        <div class="dark">
-          <div class="eyebrow">The Experience</div>
-          <h2>A jewelry moment made personal.</h2>
-          <p>Pick your chain, add a charm or connector, get custom sized, and leave with a delicate piece that feels effortless, intentional, and completely yours.</p>
-        </div>
-        <div class="card">
-          <h3>Santa Barbara</h3>
-          <p>Available by appointment with pop-ups and private events throughout the area.</p>
+          <div class="card"><h3>Bracelets</h3><p>Classic permanent jewelry custom fit to you.</p></div>
+          <div class="card"><h3>Anklets</h3><p>Delicate everyday anklets made for a timeless look.</p></div>
+          <div class="card"><h3>Charms</h3><p>Add initials, gemstones, connectors, and meaningful details.</p></div>
+          <div class="card"><h3>Events</h3><p>Perfect for bridal parties, birthdays, boutiques, and pop-ups.</p></div>
         </div>
       </div>
     </section>
 
     <section id="events">
-      <div class="container event-box">
-        <div>
-          <div class="eyebrow">Pop-Ups + Private Events</div>
-          <h2>Bring Ever Latch to your event.</h2>
-        </div>
-        <div>
-          <p>Perfect for bridal parties, birthdays, wineries, boutiques, girls’ nights, sorority events, and brand activations.</p>
-          <p>We bring the jewelry bar, welding setup, and styling support. You bring the guests, the vibe, and the reason to celebrate.</p>
-          <a class="button" href="#book">Inquire About an Event</a>
+      <div class="container">
+        <div class="dark-band">
+          <div>
+            <div class="eyebrow">Pop-Ups + Private Events</div>
+            <h2>Bring Ever Latch to your event.</h2>
+          </div>
+          <div>
+            <p>Perfect for bridal parties, wineries, boutiques, girls’ nights, birthdays, and brand events. We bring the jewelry bar, welding setup, and styling support.</p>
+            <div class="actions">
+              <a class="button light" href="https://book.squareup.com/appointments/vas2z8w1ss5yg8/location/LW295DB8795T6/services?buttonTextColor=ffffff&color=274b3a&locale=en&referrer=so&service_id=DXHAM6MCRI23MZCAGVRUA2XA" target="_blank" rel="noopener">Inquire + Book</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="about">
-      <div class="container about">
-        <div class="card">
-          <div class="eyebrow">About</div>
-          <h2>Jewelry that latches onto a memory.</h2>
-        </div>
-        <p>Ever Latch was created as an elevated permanent jewelry experience — feminine, modern, and meaningful without feeling overdone. Every piece is designed to be simple enough for daily wear and special enough to mark a moment.</p>
+      <div class="container">
+        <div class="eyebrow">About Ever Latch</div>
+        <h2>Jewelry that latches onto a memory.</h2>
+        <p>Ever Latch was created to bring a modern, elevated permanent jewelry experience to Santa Barbara — feminine, effortless, and meaningful without feeling overdone.</p>
       </div>
     </section>
 
@@ -343,45 +328,58 @@
       <div class="book">
         <div class="eyebrow">Ready to latch?</div>
         <h2>Book your jewelry appointment.</h2>
-        <p>Add your booking link here so clients can reserve bracelets, anklets, necklaces, charms, or event appointments.</p>
-        <div class="actions" style="justify-content:center;">
-          <a class="button light" href="#">Book Now</a>
-          <a class="button outline" style="color:#f7f1ec;border-color:rgba(247,241,236,.3)" href="#">@ Follow on Instagram</a>
+        <p>Reserve your permanent jewelry appointment for bracelets, anklets, charms, and custom pieces.</p>
+        <div class="actions" style="justify-content:center">
+          <a class="button light" href="https://book.squareup.com/appointments/vas2z8w1ss5yg8/location/LW295DB8795T6/services?buttonTextColor=ffffff&color=274b3a&locale=en&referrer=so&service_id=DXHAM6MCRI23MZCAGVRUA2XA" target="_blank" rel="noopener">Book Now</a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer>
-    <div class="footer-inner">
-      <div>© Ever Latch Permanent Jewelry</div>
-      <div>Timeless • Seamless • Yours</div>
-    </div>
-  </footer>
+  <footer>© Ever Latch Permanent Jewelry • Timeless, seamless, yours.</footer>
 
   <script>
     const photos = [
       {
-        src: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=900&q=80",
-        alt: "Close-up of delicate gold jewelry",
-        title: "Custom-fit pieces",
-        caption: "Replace this with your own permanent jewelry photo."
+        src: "images/IMG_0377(1).jpg",
+        alt: "Permanent anklets",
+        title: "Permanent anklets",
+        caption: "Delicate, custom-fit jewelry made for everyday wear."
       },
       {
-        src: "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&w=900&q=80",
-        alt: "Gold jewelry detail",
-        title: "Bracelets, anklets + charms",
-        caption: "Use this spot for your chain, charm, or welding photos."
+        src: "images/IMG_9799.jpg",
+        alt: "Classic gold chains",
+        title: "Classic gold chains",
+        caption: "Simple gold layers with an effortless finish."
       },
       {
-        src: "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=900&q=80",
-        alt: "Layered jewelry styling",
-        title: "A jewelry experience",
-        caption: "Perfect for pop-ups, events, and appointment photos."
+        src: "images/08121CD1-1843-4C88-AC57-53A1F29E0042.jpg",
+        alt: "Chains, charms + connectors",
+        title: "Chains, charms + connectors",
+        caption: "Curated details to make your piece personal."
+      },
+      {
+        src: "images/IMG_9773.jpg",
+        alt: "Mixed metal styling",
+        title: "Mixed metal styling",
+        caption: "Layered bracelets with meaningful accents."
+      },
+      {
+        src: "images/IMG_9825.jpg",
+        alt: "Tiny details",
+        title: "Tiny details",
+        caption: "A subtle connector for the perfect finishing touch."
+      },
+      {
+        src: "images/IMG_9846.jpg",
+        alt: "Personalized jewelry",
+        title: "Personalized jewelry",
+        caption: "Initial charms and keepsake pieces welded to you."
       }
     ];
 
     let active = 0;
+
     const image = document.getElementById("carousel-image");
     const title = document.getElementById("carousel-title");
     const caption = document.getElementById("carousel-caption");
@@ -392,12 +390,17 @@
       image.alt = photos[active].alt;
       title.textContent = photos[active].title;
       caption.textContent = photos[active].caption;
+
       dots.innerHTML = "";
+
       photos.forEach((_, index) => {
         const dot = document.createElement("button");
         dot.className = "dot" + (index === active ? " active" : "");
         dot.setAttribute("aria-label", "Show photo " + (index + 1));
-        dot.onclick = () => { active = index; render(); };
+        dot.onclick = () => {
+          active = index;
+          render();
+        };
         dots.appendChild(dot);
       });
     }
@@ -406,6 +409,7 @@
       active = (active - 1 + photos.length) % photos.length;
       render();
     };
+
     document.getElementById("next").onclick = () => {
       active = (active + 1) % photos.length;
       render();
@@ -414,7 +418,7 @@
     setInterval(() => {
       active = (active + 1) % photos.length;
       render();
-    }, 3500);
+    }, 4000);
 
     render();
   </script>
